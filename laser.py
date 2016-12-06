@@ -346,14 +346,6 @@ def tumblr_get_author(author):
     return candidates
 
 def flickr_get_pool(poolid):
-    #res = requests.post('https://api.flickr.com/services/rest/', {
-    #    'nojsoncallback': 1,
-    #    'method': 'flickr.groups.pools.getPhotos',
-    #    'api_key': KEYS['flickr'], 
-    #    'group_id': poolid,
-    #    'extras': 'owner_name,tags',
-    #    'license': '1,2,4,5,7,8', 
-    #    'format': 'json'}).json()
     res = requests.post('https://api.flickr.com/services/rest/', {
         'nojsoncallback': 1,
         'method': 'flickr.photos.search',
@@ -402,10 +394,7 @@ def gather_candidates(aspects):
                 pass
             candidates += flickr_get_author(val)
         elif form == 'flickr-pool':
-            #candidates += flickr_get_pool(val)
-            pass # TEMPORARY - needs to learn tumblr blogs so this isn't overwhelming...
-        #print("aspect: {} ; candidates: {}".format(aspect, len(candidates)))
-    #save_candidates(candidates)
+            candidates += flickr_get_pool(val)
     return candidates
 
 def remove_duplicates(candidates, ids):
