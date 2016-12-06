@@ -377,8 +377,8 @@ def gather_candidates(aspects):
     candidates = []
     aspects_c = Counter(aspects) # make a copy to mutate
     for ii in range(0, min(10, len(aspects_c))):
-        del aspects_c[aspect] # this way we can't pick the same thing twice
         aspect = counter_choice(aspects_c)
+        del aspects_c[aspect] # this way we can't pick the same thing twice
         if nopost: print(aspect)
         form, _, val = aspect.partition(':')
         if form == 'tag':
