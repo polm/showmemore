@@ -86,6 +86,10 @@ def init_db():
       tweet text not null,
       stars int)""")
 
+    # add indexes so things happen with reasonable speed
+    conn.execute("create index tweet_source_index on tweet(source)")
+    conn.execute("create index source_aspect_source_index on source_aspect(source)")
+
     conn.commit()
     conn.close()
 
