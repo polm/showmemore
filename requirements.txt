@@ -1,2 +1,2 @@
-requests==2.12.3
+requests>=2.20.0
 twitter==1.17.1
