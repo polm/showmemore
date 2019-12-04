@@ -1,5 +1,11 @@
 # showmemore
 
+> **Note:** This is not maintained. It was a fun weekend project a few years
+> ago, and [@showmepixels](https://twitter.com/showmepixels) is still running,
+> but I don't work to improve it and it's only a matter of time before Twitter
+> or Tumblr change their APIs so it doesn't work. The code is left up for the
+> curious. 
+
 **ShowMeMore** is an automated researcher. Given a list of tags to start with,
 it goes hunting for images, and over time grows its model in response to
 reactions, slowly reaching out to find things you weren't aware you already
